@@ -55,6 +55,9 @@ Connector::Options *configure_endpoint(Connector::OptionsBuilder &config)
         .setServerCertificate((uint8_t *)SERVER_CERT,(int)sizeof(SERVER_CERT))
         .setClientCertificate((uint8_t *)CERT,(int)sizeof(CERT))
         .setClientKey((uint8_t *)KEY,(int)sizeof(KEY))
+	 
+	// set socket protocol type: TCP
+	.setCoAPConnectionType(COAP_TCP)
                 
         // Add my specific physical resources...
         .addResource(&led)
